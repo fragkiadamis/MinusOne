@@ -66,3 +66,96 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# ----------------------------------------------------------------------------
+# Qt
+# ----------------------------------------------------------------------------
+# Qt Creator user settings
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.creator.user
+*.creator.user.*
+*.autosave
+
+# qmake / moc / uic / rcc generated files
+.qmake.cache
+.qmake.stash
+*.moc
+moc_*.cpp
+moc_*.h
+moc_predefs.h
+qrc_*.cpp
+ui_*.h
+Makefile*
+*build-*
+*_autogen/
+*.qmlc
+*.jsc
+*.qmlproject.user
+*.qmlproject.user.*
+
+# Qt translations (compiled)
+*.qm
+
+# Qt for Android / QML caching
+android-build/
+.rcc/
+qmlcache/
+
+# ----------------------------------------------------------------------------
+# IDEs and editors
+# ----------------------------------------------------------------------------
+# JetBrains (CLion, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+cmake-build-*/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+out/
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+
+# Vim / Emacs / misc editors
+*~
+*.swo
+\#*\#
+.\#*
+*.orig
+tags
+.clangd/
+
+# ----------------------------------------------------------------------------
+# OS
+# ----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
