@@ -1,0 +1,23 @@
+{
+  "branches": ["main"],
+  "tagFormat": "v${version}",
+  "plugins": [
+    ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
+    ["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "if [ -f CMakeLists.txt ]; then sed -i -E '/project\\(/,/\\)/ s/VERSION [0-9]+(\\.[0-9]+)*/VERSION ${nextRelease.version}/' CMakeLists.txt; fi"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CMakeLists.txt", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
